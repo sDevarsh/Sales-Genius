@@ -1,0 +1,179 @@
+<div class="wrapper">
+  <header class="header-5 homeBG">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="//">
+          <img src="../../assets/images/SalesGenius (2)crop.png" style="padding-right: 5px; padding-bottom: 5px" /> <img
+            src="../../assets/images/SalesGenius (1)crop.png" style="padding-right: 5px; padding-bottom: 5px" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary"
+          aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-primary">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a routerLink="//">
+                  <img src="../../assets/images/SalesGenius (2)crop.png" />
+
+                  <b class="text-primary ">SalesGenius</b></a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary"
+                  aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="//"><b>Home</b></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/services-details"><b>Services</b></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLink="/how-to-use"><b>How TO Use</b></a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div style="min-height: 0vh !important">
+      <div class="container pb-9" style="padding-top: 5vh !important">
+        <div class="row align-items-center text-left">
+          <div class="col-lg-6 col-12">
+            <h1 class="display-3 pt-6" style="color: white">Your Data, Our Expertise</h1>
+            <p class="lead pb-4 text-justify" style="color: white">
+              We believe that data analysis should be accessible and understandable. We provide clear, actionable
+              reports and visualizations that enable you to make informed choices. Your success is our success, and
+              we're here to empower you on your data journey.
+            </p>
+            <p class="lead pb-4 text-justify" style="color: white">
+              <b><b>Transforming Data Chaos into Analytical Clarity!</b></b>
+            </p>
+            <div class="row row-input">
+              <div class="col-sm-4 col-md-5 col-12 pl-lg-0">
+                <a class="btn btn-primary btn-block" href="#csv" type="button">
+                  Get Started
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12 pl-0">
+            <img class="ml-lg-5 hide" src="../../assets/images/SalesGenius crop.png" width="90%" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="section features-1 csvback" id="csv">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 mx-auto text-center">
+          <h3 class="display-3">Analyze Your Data with SalesGenius</h3>
+          <p class="lead">
+            All-encompassing Analysis needs in one easy and
+            affordable tool. Collaborate with everyone in real-time.
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 text-center pl-5 pr-5 pb-5">
+            <label for="formFile" class="form-label text-center fa-2x"><b>Upload CSV File</b></label>
+            <input class="form-control text-center" type="file" (change)="onFileChange($event)" id="formFile"
+              accept=".csv">
+          </div>
+
+          <div class="col-md-12 text-center pl-5 pr-5 pb-4">
+            <!-- <h4 class="display-5"><b>Select Columns In Order of uploded
+                File</b></h4> -->
+
+          </div>
+          <!-- <div class="row pl-5 pr-5"> -->
+          <!-- <div class="col-md-4 text-center pb-4" *ngFor="let _ of iterationCount; let index = index">
+            <select [(ngModel)]="selectedColunms" class="form-control" placeholder="Select Colunms" name="project"
+              (ngModelChange)="getData(index)" style="width: 200px;">
+              <option *ngFor="let colunms of allColunms" [value]="colunms">
+                {{ colunms }}
+              </option>
+            </select>
+          </div> -->
+          <!-- </div> -->
+
+          <div class="col-12">
+            <!-- <div class="row">
+              <div class="col-md-6 text-center pl-5 pr-5 pb-5">
+                <button class="btn btn-danger  btn-block" style="background: red;" (click)="handleRemoveClick()"
+                  type="button" [disabled]="allowRemove">
+                  Remove Column
+                </button>
+              </div>
+              <div class="col-md-6 text-center pl-5 pr-5 pb-5">
+                <button class="btn btn-primary btn-block" (click)="handleAddClick()" type="button"
+                  [disabled]="allowAdd">
+                  Add Column
+                </button>
+              </div>
+            </div> -->
+
+          </div>
+
+          <div class="col-12 mb-5"> <button class="btn btn-primary btn-block text-center p-3" type="button"
+              (click)="uploadFile()" style="background: #198754; border: #198754;">Analyis</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="section accordion-1">
+    <div class="container" [hidden]="!loading">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+          <h2 class="title mb-3 mt-5">Graphs </h2>
+        </div>
+      </div>
+
+      <div class="row" *ngFor="let data of allData; let index = index">
+        <div class="col-md-12 ml-auto">
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="heading{{index}}">
+                <h5 class="mb-0">
+                  <button class="btn btn-link w-100 text-primary text-left" type="button" data-toggle="collapse"
+                    [attr.data-target]="'#'+index" aria-expanded="true" [attr.aria-controls]="index">
+                    <span>{{data.service}}</span>
+                    <i class="ni ni-bold-down float-right pt-1"></i>
+                  </button>
+                </h5>
+              </div>
+              <div class="collapse show" id="he{{index}}" [attr.aria-labelledby]="'heading1'+index"
+                data-parent="#accordionExample">
+                <div class="card-body opacity-8">
+                  <img src="data:image/png;base64,{{imageUrl[index]}}" style="width: 100%; height: 100%;" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status" [hidden]="load">
+        <span class="sr-only" id="loading"></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <ngx-spinner size="medium"></ngx-spinner> -->
+</div>
