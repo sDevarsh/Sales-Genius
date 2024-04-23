@@ -12,5 +12,5 @@ COPY app.js app.js
 COPY database.db database.db
 COPY final_project.py final_project.py
 
-RUN npm install
+RUN npm installS
 ENTRYPOINT [ "node","app.js" ]

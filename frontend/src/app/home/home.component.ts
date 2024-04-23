@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
     this.load = false;
     this.loading = true;
     this.allData = []
+    this.imageUrl = [];
     this.uploadService.uploadFile(this.selectedFile)
       .subscribe(
         (data) => {
